@@ -8,21 +8,35 @@ const Container = styled.View`
 `
 
 const ProfileImage = styled.Image`
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: 20px;
 `
 
+const UserActive = styled.View`
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 15px;
+    height: 15px;
+    border-radius: 8px;
+    background: #10D24B;
+    border: 2px solid #FFFFFF
+`
+
+
 // Define the props interface
 interface AvatarProps {
-    source: { uri: string }; // Assuming the source is an object with a uri key
+    source: { uri: string };
+    online: any;
 }
 
 // Use the props interface in the component
-const Avatar: React.FC<AvatarProps> = ({ source }) => {
+const Avatar: React.FC<AvatarProps> = ({ source, online}) => {
     return (
         <Container>
             <ProfileImage source={source} />
+            {online && <UserActive></UserActive>}
         </Container>
     )
 }
