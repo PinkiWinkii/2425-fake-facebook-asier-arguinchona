@@ -15,4 +15,4 @@ const Groups = () => {
     )
 }
 
-export default Friends;
+export default Groups;

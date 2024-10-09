@@ -25,39 +25,23 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import Header from './components/Header';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import { Icon} from "react-native-elements";
+import { Dimensions } from 'react-native';
+import Home from './components/Home';
+import Friends from './components/Friends';
+import Groups from './components/Groups';
+import Profile from './components/Profile';
+import Notifications from './components/Notifications';
+import Menu from './components/Menu';
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
+const Tab = createMaterialTopTabNavigator();
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
+
+  const {width, height} = Dimensions.get('window');
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
@@ -70,29 +54,75 @@ function App(): React.JSX.Element {
       barStyle={'dark-content'}
       ></StatusBar>
       <ScrollView>
-        <Header></Header>
+        <Header>
+
+        </Header>
+        
+        <NavigationContainer
+          
+          key="TopNavigatorController">
+          
+        <Tab.Navigator
+          key="TopNavigator"
+          
+          screenOptions={({ route }) => ({
+            swipeEnabled: true,
+            tabBarShowLabel: false,
+            tabBarShowIcon: true,
+            tabBarActiveTintColor: '#3a86e9',
+            tabBarInactiveTintColor: '#9F9F9F',
+
+            tabBarIcon: ({ focused = true, color }) => {
+              let iconName: string = 'Home';
+              if (route.name === 'Home') iconName = 'home';
+              else if (route.name === 'Friends') iconName = 'group';
+              else if (route.name === 'Groups') iconName = 'groups';
+              else if (route.name === 'Profile') iconName = 'account-circle';
+              else if (route.name === 'Notifications') iconName = 'notifications';
+              else if (route.name === 'Menu') iconName = 'menu';
+              return <Icon name={iconName} size={26} color={color}></Icon>;
+            },
+          })}
+        >
+          <Tab.Screen
+            name="Home"
+            component={Home}
+            key="home" // Pass key explicitly here
+          />
+          <Tab.Screen
+            name="Friends"
+            component={Friends}
+            key="friends" // Explicit key
+          />
+          <Tab.Screen
+            name="Groups"
+            component={Groups}
+            key="groups" // Explicit key
+          />
+          <Tab.Screen
+            name="Profile"
+            component={Profile}
+            key="profile" // Explicit key
+          />
+          <Tab.Screen
+            name="Notifications"
+            component={Notifications}
+            key="notifications" // Explicit key
+          />
+          <Tab.Screen
+            name="Menu"
+            component={Menu}
+            key="menu" // Explicit key
+          />
+        </Tab.Navigator>
+
+        </NavigationContainer>
+
+
       </ScrollView>
     </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;
