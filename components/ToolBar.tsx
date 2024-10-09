@@ -4,6 +4,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import Avatar from "./Avatar";
 
 const Container = styled.View`
+    
     width: 100%;
     height: 92px;
 `
@@ -20,9 +21,11 @@ const Input = styled.TextInput`
     height: 40px;
     width: 85%;
     padding: 0 8px;
-    border: 1px solid #DDD;
+    border: 1px solid #DDDDDD;
     margin: 10px;
     border-radius: 30px;
+    color: black;
+    placeholderTextColor: black;
 `
 
 const Divider = styled.View`
@@ -39,7 +42,8 @@ const Menu = styled.View`
     height: 42px;
 `
 
-const MenuText = styled.Text`
+const MenuText = styled.Text`   
+    color: black;
     padding-left: 11px;
     font-weight: 500;
     font-size: 12px;
@@ -55,8 +59,8 @@ const ToolBar = () => {
     return (
         <Container>
             <Row>
-                <Avatar source={require('../assets/12.jpg')}></Avatar>
-                <Input placeholder="¿Qué estas pensando?"></Input>
+                <Avatar source={require('../assets/12.jpg')} online={true} story={false} checked={true}></Avatar>
+                <Input placeholder="¿Qué estás pensando?"></Input>
             </Row>
             <Divider></Divider>
             <Row>
