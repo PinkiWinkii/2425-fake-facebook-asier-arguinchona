@@ -3,6 +3,7 @@ import styled from "styled-components/native";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { Icon } from "react-native-elements";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 
 
@@ -42,10 +43,10 @@ const Header = () => {
             <Text>facebook</Text>
             <Row>
                 <Button>
-                    <Icon name='search' size={26} color={'black'}></Icon>
+                    <MaterialCommunityIcons name='magnify' size={26} color={'black'}></MaterialCommunityIcons>
                 </Button>
                 <Button>
-                    <Icon name='chat' size={26} color={'black'}></Icon>
+                    <MaterialCommunityIcons name='facebook-messenger' size={26} color={'black'}></MaterialCommunityIcons>
                 </Button>
             </Row>
         </Container>
