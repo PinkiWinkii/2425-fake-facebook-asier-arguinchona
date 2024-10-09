@@ -35,6 +35,7 @@ import Groups from './components/Groups';
 import Profile from './components/Profile';
 import Notifications from './components/Notifications';
 import Menu from './components/Menu';
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -75,12 +76,12 @@ function App(): React.JSX.Element {
             tabBarIcon: ({ focused = true, color }) => {
               let iconName: string = 'Home';
               if (route.name === 'Home') iconName = 'home';
-              else if (route.name === 'Friends') iconName = 'group';
-              else if (route.name === 'Groups') iconName = 'groups';
-              else if (route.name === 'Profile') iconName = 'account-circle';
-              else if (route.name === 'Notifications') iconName = 'notifications';
+              else if (route.name === 'Friends') iconName = 'account-multiple-outline';
+              else if (route.name === 'Groups') iconName = 'account-group';
+              else if (route.name === 'Profile') iconName = 'account-circle-outline';
+              else if (route.name === 'Notifications') iconName = 'bell-outline';
               else if (route.name === 'Menu') iconName = 'menu';
-              return <Icon name={iconName} size={26} color={color}></Icon>;
+              return <MaterialCommunityIcons name={iconName} size={26} color={color}></MaterialCommunityIcons>;
             },
           })}
         >
