@@ -10,7 +10,7 @@ const View = styled.View`
 const Profile = () => {
     return(
         <View>
-            <Text>Home Screen</Text>
+            <Text>Profile Screen</Text>
         </View>
     )
 }

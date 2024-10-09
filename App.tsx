@@ -27,7 +27,6 @@ import {
 import Header from './components/Header';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import { Icon} from "react-native-elements";
 import { Dimensions } from 'react-native';
 import Home from './components/Home';
 import Friends from './components/Friends';
@@ -46,45 +45,39 @@ function App(): React.JSX.Element {
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    flex: 1,
   };
 
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
-      backgroundColor={'white'}
-      barStyle={'dark-content'}
+        backgroundColor={'white'}
+        barStyle={'dark-content'}
       ></StatusBar>
-      <ScrollView>
-        <Header>
 
-        </Header>
-        
-        <NavigationContainer
-          
-          key="TopNavigatorController">
-          
-        <Tab.Navigator
-          key="TopNavigator"
-          
-          screenOptions={({ route }) => ({
-            swipeEnabled: true,
-            tabBarShowLabel: false,
-            tabBarShowIcon: true,
-            tabBarActiveTintColor: '#3a86e9',
-            tabBarInactiveTintColor: '#9F9F9F',
+        <Header></Header>
 
-            tabBarIcon: ({ focused = true, color }) => {
-              let iconName: string = 'Home';
-              if (route.name === 'Home') iconName = 'home';
-              else if (route.name === 'Friends') iconName = 'account-multiple-outline';
-              else if (route.name === 'Groups') iconName = 'account-group';
-              else if (route.name === 'Profile') iconName = 'account-circle-outline';
-              else if (route.name === 'Notifications') iconName = 'bell-outline';
-              else if (route.name === 'Menu') iconName = 'menu';
-              return <MaterialCommunityIcons name={iconName} size={26} color={color}></MaterialCommunityIcons>;
-            },
-          })}
-        >
+        <NavigationContainer>
+          <Tab.Navigator     
+            screenOptions={({ route }) => ({
+              swipeEnabled: true,
+              tabBarShowLabel: false,
+              tabBarShowIcon: true,
+              tabBarActiveTintColor: '#3a86e9',
+              tabBarInactiveTintColor: '#9F9F9F',
+
+              tabBarIcon: ({ focused = true, color }) => {
+                let iconName: string = 'Home';
+                if (route.name === 'Home') iconName = 'home';
+                else if (route.name === 'Friends') iconName = 'account-multiple-outline';
+                else if (route.name === 'Groups') iconName = 'account-group';
+                else if (route.name === 'Profile') iconName = 'account-circle-outline';
+                else if (route.name === 'Notifications') iconName = 'bell-outline';
+                else if (route.name === 'Menu') iconName = 'menu';
+                return <MaterialCommunityIcons name={iconName} size={26} color={color}></MaterialCommunityIcons>;
+              },
+            })}
+          >
           <Tab.Screen
             name="Home"
             component={Home}
@@ -115,12 +108,12 @@ function App(): React.JSX.Element {
             component={Menu}
             key="menu" // Explicit key
           />
-        </Tab.Navigator>
+          </Tab.Navigator>
 
         </NavigationContainer>
 
 
-      </ScrollView>
+
     </SafeAreaView>
   );
 }

@@ -10,7 +10,7 @@ const View = styled.View`
 const Notifications = () => {
     return(
         <View>
-            <Text>Home Screen</Text>
+            <Text>Notification Screen</Text>
         </View>
     )
 }

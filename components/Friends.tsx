@@ -10,7 +10,7 @@ const View = styled.View`
 const Friends = () => {
     return(
         <View>
-            <Text>Home Screen</Text>
+            <Text>Friends Screen</Text>
         </View>
     )
 }

@@ -10,7 +10,7 @@ const View = styled.View`
 const Groups = () => {
     return(
         <View>
-            <Text>Home Screen</Text>
+            <Text>Groups Screen</Text>
         </View>
     )
 }
