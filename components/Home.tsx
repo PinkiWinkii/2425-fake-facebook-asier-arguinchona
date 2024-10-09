@@ -4,6 +4,7 @@ import styled from "styled-components/native";
 import MainSeparator from "./MainSeparator";
 import ToolBar from "./ToolBar";
 import Users from "./Users";
+import Story from "./Story";
 
 const View = styled.View`
     flex: 1;
@@ -15,6 +16,9 @@ const Home = () => {
             <ToolBar></ToolBar>
             <MainSeparator></MainSeparator>
             <Users></Users>
+            <MainSeparator></MainSeparator>
+            <Story></Story>
+            <MainSeparator></MainSeparator>
         </View>
     )
 }
