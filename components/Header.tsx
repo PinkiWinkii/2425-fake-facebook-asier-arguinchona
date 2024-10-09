@@ -15,7 +15,7 @@ const Container = styled.View`
     justify-content: space-between;
 `
 
-const Text2 = styled.Text`
+const Text = styled.Text`
     color: #3a86e9;
     font-size: 25px;
     font-weight: bold;
@@ -39,7 +39,7 @@ const Button = styled.TouchableOpacity`
 const Header = () => {
     return (
         <Container>
-            <Text2>facebook</Text2>
+            <Text>facebook</Text>
             <Row>
                 <Button>
                     <Icon name='search' size={26} color={'black'}></Icon>
