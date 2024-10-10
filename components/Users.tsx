@@ -12,7 +12,7 @@ const Container = styled.View`
     height: 60px;
     flex-direction: row;
     align-items: center;
-    background: #FFFFFF;
+    background: white;
 `
 
 const Room = styled.TouchableOpacity`
@@ -43,7 +43,7 @@ const Users = () => {
             <ScrollView 
                 horizontal 
                 showsHorizontalScrollIndicator={false} 
-                style={{paddingLeft: 12}}>
+                style={{paddingLeft: 12, backgroundColor:'white'}}>
                     <Room>
                         <MaterialCommunityIcons name="video-plus" size={26} color="#A748EE"></MaterialCommunityIcons>
                         <Text>Crear sala</Text>

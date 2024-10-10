@@ -13,6 +13,7 @@
         height: 230px;
         flex-direction: row;
         alignt-items: center;
+        background: white;
     `
 
     const UserCard = styled.View`
