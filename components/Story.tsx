@@ -5,6 +5,7 @@
     import { ImageProps } from "react-native";
     import Avatar from "./Avatar";
 
+
     const fakeStories = require('../data/fakeStories.tsx')
 
     const Container = styled.View`
@@ -15,6 +16,46 @@
         alignt-items: center;
         background: white;
     `
+    const FakeCard = styled.View`
+        width: 110px;
+        height: 200px;
+        margin-left: 10px;
+        background: white;
+    `
+
+    const PersonalCard = styled.View`
+        width: 110px;
+        height: 200px;
+        margin-right: 10px;
+        position: absolute;
+        background: #FFFFFF;
+        border-radius: 10px;
+        z-index: 10;
+        border: 1px solid #DDDDDD
+    `
+
+    const PersonalCardStory = styled.Image`
+        width: 100%;
+        height: 130px;
+        border-radius: 10px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    `
+
+    const PersonalCardIcon = styled.View`
+        width: 34px;
+        height: 34px;
+        border-radius: 17px;
+        background: #3a86e9;
+        border-width: 3px;
+        border-color: #FFFFFF;
+        align-items: center;
+        position: absolute;
+        top: 115px;
+        left: 40px;`
 
     const UserCard = styled.View`
 
