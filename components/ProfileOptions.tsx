@@ -10,9 +10,7 @@ const Container = styled.View`
     align-items: center; 
     padding: 0 30px; 
     background: white;
-    border-bottom-width: 1px;
-    border-bottom-color: gray;
-    border-radius: 8px;
+
 `;
 
 const OptionWrapper = styled.View`
