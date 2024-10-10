@@ -21,7 +21,7 @@ const Home = () => {
             <Story></Story>
             <MainSeparator></MainSeparator>
             <Post></Post>
-            <MainSeparator></MainSeparator>
+            
         </View>
     )
 }

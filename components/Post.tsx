@@ -11,6 +11,7 @@ const fakeUsers = require('../data/fakeUsers.tsx');
 
 const Container = styled.View`
     flex: 1;
+    margin-bottom: 2px;
 `
 
 const Header = styled.View`
@@ -78,7 +79,7 @@ const TextCount = styled.Text`
 
 const Separator = styled.View`
     width: 100%;
-    height: 10px;
+    height: 2px;
     background: #f9f9f9;
 `
 
@@ -86,6 +87,7 @@ const FooterMenu = styled.View`
     flex-direction: row;
     justify-content: space-between;
     pdading: 9px 0;
+    top: 5px;
 `
 
 const Button = styled.TouchableOpacity`
@@ -158,6 +160,7 @@ const Post = () => {
                             </Button>
                         </FooterMenu>
                     </Footer>
+                    <MainSeparator></MainSeparator>
                 </Container>
                 )
             })}
