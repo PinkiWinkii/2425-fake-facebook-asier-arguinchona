@@ -28,6 +28,7 @@ const MusicTextContainer = styled.View`
 
 const MusicTitle = styled.Text`
     font-weight: bold; 
+        color: gray;
 `;
 
 const MusicImage = styled.Image`

@@ -5,7 +5,7 @@
  * @format
  */
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
@@ -35,9 +35,13 @@ import Profile from './components/Profile';
 import Notifications from './components/Notifications';
 import Menu from './components/Menu';
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-
+import SplashScreen from 'react-native-splash-screen';
 import { LogBox } from 'react-native';
+
 LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+LogBox.ignoreAllLogs();//Ignore all log notifications
+
+
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -45,6 +49,10 @@ function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
   const {width, height} = Dimensions.get('window');
+  
+  useEffect(() => {
+    SplashScreen.hide();
+    }, []);
 
   const backgroundStyle = {
     backgroundColor: 'black',
