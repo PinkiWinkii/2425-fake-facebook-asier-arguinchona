@@ -31,7 +31,8 @@ const OptionBackground = styled.View`
 
 const OptionText = styled.Text`
     font-size: 12px;
-    color: #333;
+    color: black;
+    font-weight: 450;
 `;
 
 const ProfileOptions = () => {
