@@ -1,16 +1,19 @@
 import React from "react";
 import { Text } from "react-native";
 import styled from "styled-components/native";
+import MainSeparator from "./MainSeparator";
+import ToolBar from "./ToolBar";
+import Background from "./Background";
 
-const View = styled.View`
-    align-items: center;
-    height: 500px;
+const View = styled.ScrollView`
+    flex: 1;
 `
 
 const Profile = () => {
     return(
         <View>
-            <Text>Profile Screen</Text>
+            <Background></Background>
+            <MainSeparator/>
         </View>
     )
 }
