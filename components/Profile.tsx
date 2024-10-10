@@ -5,6 +5,7 @@ import MainSeparator from "./MainSeparator";
 import ToolBar from "./ToolBar";
 import Background from "./Background";
 import Music from "./Music";
+import ProfileOptions from "./ProfileOptions";
 
 const View = styled.ScrollView`
     flex: 1;
@@ -15,6 +16,7 @@ const Profile = () => {
         <View>
             <Background></Background>
             <Music></Music>
+            <ProfileOptions></ProfileOptions>
             <MainSeparator/>
         </View>
     )
