@@ -4,12 +4,13 @@ import styled from "styled-components/native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { ImageProps } from "react-native";
 import ProfileAvatar from "./ProfileAvatar";
+import Music from "./Music";
 
 const backgroundImage = require('../assets/post4.jpg');
 
 const Container = styled.View`
     width: 100%;
-    height: 370px;
+    height: 290px;
     background: white;
 `
 
@@ -26,7 +27,7 @@ const BackgroundImage = styled.Image`
 
 const ProfileAvatarContainer = styled.View`
     width: 100%;
-    bottom: 42%;   
+    bottom: 110px;   
     align-items: center;
 `
 
@@ -52,6 +53,7 @@ const Background = () => {
                     </ProfileAvatar>
                 </ProfileAvatarContainer>
                 <Text>Asier Arguinchona</Text>
+
             </ImageAndAvatarContainer>
         </Container>
     )
