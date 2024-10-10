@@ -8,6 +8,7 @@
     const fakeStories = require('../data/fakeStories.tsx')
 
     const Container = styled.View`
+        
         width: 100%;
         height: 230px;
         flex-direction: row;
@@ -15,7 +16,7 @@
     `
 
     const UserCard = styled.View`
-        flex: 1;
+
         margin-top: 20px;
         width: 110px;
         height: 200px;

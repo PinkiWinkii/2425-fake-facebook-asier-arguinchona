@@ -7,6 +7,8 @@ import MainSeparator from "./MainSeparator";
 
 const fakeUsers = require('../data/fakeUsers.tsx');
 
+
+
 const Container = styled.View`
     flex: 1;
 `
@@ -98,3 +100,69 @@ const Text = styled.Text`
     font-size: 12px;
     color: #424040;
 `
+
+const Post = () => {
+    return (
+        <>
+            {fakeUsers.map((user: any, index: any) => {    
+               
+                return(
+                <Container key={index}>  
+                    <Header>
+                        <Row>
+                            <Avatar source={user.source} online={user.online} story={false} checked={false}></Avatar>
+                            <View style={{paddingLeft: 10}}>
+                                <User>{user.name}</User>
+                                <Row>
+                                    <Time>{user.time}</Time>
+                                    <MaterialCommunityIcons name='circle-small' size={12} color='#747476'></MaterialCommunityIcons>
+                                    <MaterialCommunityIcons name='earth' size={10} color='#747476'></MaterialCommunityIcons>
+                                </Row>
+                            </View>
+                        </Row>
+                        <MaterialCommunityIcons name='dots-horizontal' size={20} color='#747476'></MaterialCommunityIcons>
+                    </Header>
+
+                    <PostContent>{user.postContent}</PostContent>
+                    <Photo source={user.postImage}></Photo>
+
+                    <Footer>
+                        <FooterCount>
+                            <Row>
+                                <IconCount>
+                                    <MaterialCommunityIcons name= 'thumb-up-outline' size={12} color='#FFFFFF'></MaterialCommunityIcons>
+                                </IconCount>
+                                <TextCount>{user.likes}</TextCount>
+                            </Row>
+                            <TextCount>{user.comments}</TextCount>
+                        </FooterCount>
+                        <Separator></Separator>
+                        <FooterMenu>
+                            <Button>
+                                <Icon>
+                                    <MaterialCommunityIcons name='thumb-up-outline' size={20} color='#424848'></MaterialCommunityIcons>
+                                </Icon>
+                                <Text>Me gusta</Text>
+                            </Button>
+                            <Button>
+                                <Icon>
+                                    <MaterialCommunityIcons name='comment-outline' size={20} color='#424040'></MaterialCommunityIcons>
+                                </Icon>
+                                <Text>Comentar</Text>
+                            </Button>
+                            <Button>
+                                <Icon>
+                                    <MaterialCommunityIcons name='share-outline' size={20} color='#424040'></MaterialCommunityIcons>
+                                </Icon>
+                                <Text>Compartir</Text>
+                            </Button>
+                        </FooterMenu>
+                    </Footer>
+                </Container>
+                )
+            })}
+        </>
+    )
+}
+
+export default Post;

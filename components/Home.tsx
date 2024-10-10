@@ -5,8 +5,9 @@ import MainSeparator from "./MainSeparator";
 import ToolBar from "./ToolBar";
 import Users from "./Users";
 import Story from "./Story";
+import Post from "./Post";
 
-const View = styled.View`
+const View = styled.ScrollView`
     flex: 1;
 `
 
@@ -18,6 +19,8 @@ const Home = () => {
             <Users></Users>
             <MainSeparator></MainSeparator>
             <Story></Story>
+            <MainSeparator></MainSeparator>
+            <Post></Post>
             <MainSeparator></MainSeparator>
         </View>
     )
