@@ -5,6 +5,7 @@ import MainSeparator from "./MainSeparator";
 import ToolBar from "./ToolBar";
 import Users from "./Users";
 import Story from "./Story";
+import Story2 from "./Story2";
 import Post from "./Post";
 
 const View = styled.ScrollView`
@@ -18,7 +19,7 @@ const Home = () => {
             <MainSeparator></MainSeparator>
             <Users></Users>
             <MainSeparator></MainSeparator>
-            <Story></Story>
+            <Story2></Story2>
             <MainSeparator></MainSeparator>
             <Post></Post>
             
