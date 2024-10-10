@@ -16,59 +16,62 @@ const Container = styled.View`
 `;
 
 const PersonalCard = styled(Animated.View)`
-    width: 110px;
+    width: 111px;
     height: 200px;
     margin-right: 10px;
     position: absolute;
     background: #FFFFFF;
-    border-radius: 10px;
+    border-radius: 30px;
     z-index: 10;
-    border: 1px solid #DDDDDD;
-`;
+    border: 1px solid #DDDDDD
+`
 
 const FakeCard = styled.View`
-width: 110px;
-height: 200px;
-margin-left: 10px;
-background: white;
+    width: 110px;
+    height: 200px;
+    margin-left: 10px;
+    background: white;
+    margin-right: 10px;
 `
 
 const PersonalCardStory = styled(Animated.Image)`
-width: 100%;
-height: 130px;
-border-radius: 10px;
-border-bottom-left-radius: 0;
-border-bottom-right-radius: 0;
-position: absolute;
-top: 0px;
-left: 0px;
+        width: 100%;
+        height: 130px;
+        border-radius: 10px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 10px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
 `
 
 const PersonalCardIcon = styled(Animated.View)`
-width: 34px;
-height: 34px;
-border-radius: 17px;
-background: #3a86e9;
-border-width: 3px;
-border-color: #FFFFFF;
-align-items: center;
-position: absolute;
-top: 115px;
-left: 40px;`
+    width: 34px;
+    height: 34px;
+    border-radius: 17px;
+    background: #3a86e9;
+    border-width: 3px;
+    border-color: #FFFFFF;
+    align-items: center;
+    position: absolute;
+    top: 115px;
+    left: 40px;
+`
 
 const UserCard = styled.View`
-
-margin-top: 20px;
-width: 110px;
-height: 200px;
-margin-right: 10px;
-position: relative;
+    bottom: 10px;
+    margin-top: 20px;
+    width: 110px;
+    height: 200px;
+    margin-right: 10px;
+    position: relative;
 `
 
 const UserCardStory = styled.Image`
-width: 100%;
-height: 200px;
-border-radius: 10px;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
 `
 
 const UserCardPlus = styled.View`
@@ -145,6 +148,8 @@ const Story2 = () => {
       borderRadius: cardRadius,
       borderTopLeftRadius: cardLeftRadius,
       borderBottomLeftRadius: cardLeftRadius,
+      borderTopRightRadius: cardRadius,
+      borderBottomRightRadius: cardRadius,
     };
   });
 
@@ -156,7 +161,9 @@ const Story2 = () => {
     const imageMargin       = interpolate(scroll_x.value, [0, 100], [0, 6], 'clamp');
     const imageRadius       = interpolate(scroll_x.value, [0, 100], [10, 40], 'clamp');
     const imageBottomRadius = interpolate(scroll_x.value, [0, 100], [0, 40], 'clamp');
+    const imageTopRadius = interpolate(scroll_x.value, [0, 100], [10, 40], 'clamp');
     
+    console.log("scroll_x.value:", scroll_x.value);
     return {
       top: imageTop,
       left: imageLeft,
@@ -165,8 +172,10 @@ const Story2 = () => {
       marginRight: imageMargin,
       marginTop: imageMargin,
       borderRadius: imageRadius,
-      borderTopLeftRadius: imageBottomRadius,
+      borderTopLeftRadius: imageTopRadius,
       borderBottomLeftRadius: imageBottomRadius,
+      borderTopRightRadius: imageTopRadius,
+      borderBottomRightRadius: imageBottomRadius,  
     };
   });
 
@@ -197,15 +206,7 @@ const Story2 = () => {
     <>
       
         <Container>
-            <Animated.ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            onScroll={(event) => {
-                scroll_x.value = event.nativeEvent.contentOffset.x;  // update shared value with scroll position
-            }}
-            scrollEventThrottle={5}
-            >
-          <PersonalCard style={animatedStylePersonalCard}>
+        <PersonalCard style={animatedStylePersonalCard}>
                 <PersonalCardStory 
                     source={require('../assets/story.jpg')} 
                     style={animatedStylePersonalCardStory}>
@@ -218,6 +219,15 @@ const Story2 = () => {
                     <MaterialCommunityIcons name="plus" size={28} color='#FFFFFF'></MaterialCommunityIcons>
                 </PersonalCardIcon>
           </PersonalCard>
+            <Animated.ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            onScroll={(event) => {
+                scroll_x.value = event.nativeEvent.contentOffset.x;  // update shared value with scroll position
+            }}
+            scrollEventThrottle={16}
+            >
+
 
         <FakeCard></FakeCard>
         {fakeStories.map((story: any, index: any) => {    
