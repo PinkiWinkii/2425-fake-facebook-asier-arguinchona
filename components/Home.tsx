@@ -15,8 +15,8 @@ const View = styled.ScrollView`
 const Home = () => {
     return(
         <View>
-            <ToolBar></ToolBar>
-            <MainSeparator></MainSeparator>
+            <ToolBar/>
+            <MainSeparator/>
             <Users></Users>
             <MainSeparator></MainSeparator>
             <Story2></Story2>

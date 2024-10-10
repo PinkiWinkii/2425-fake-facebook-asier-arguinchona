@@ -5,7 +5,9 @@ const Separator = styled.View`
     width: 100%;
     height: 10px;
     background: #BDBDBD;
-    margin: 12px 0 0 0;
+    margin-top: 7px;
+    border-top: 5px solid red;
+
 `
 
 const MainSeparator = () => {

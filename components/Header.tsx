@@ -6,11 +6,12 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 
 const Container = styled.View`
     width: 100%;
-    height: 58px;
+    height: 56px;
     padding: 0 11px;
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
+    background: white;
 `
 
 const Text = styled.Text`

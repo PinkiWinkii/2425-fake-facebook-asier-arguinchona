@@ -36,6 +36,9 @@ import Notifications from './components/Notifications';
 import Menu from './components/Menu';
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
+import { LogBox } from 'react-native';
+LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+
 const Tab = createMaterialTopTabNavigator();
 
 function App(): React.JSX.Element {
@@ -44,7 +47,7 @@ function App(): React.JSX.Element {
   const {width, height} = Dimensions.get('window');
 
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    backgroundColor: 'black',
     flex: 1,
   };
 
